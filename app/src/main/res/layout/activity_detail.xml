@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/transparant"
     tools:context=".DetailActivity">
 
     <ScrollView
@@ -17,41 +18,47 @@
 
             <ImageView
                 android:id="@+id/imageDetail"
-                android:layout_width="450dp"
-                android:layout_height="450dp" />
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
 
             <TextView
                 android:id="@+id/tvNamaDetail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nama"
-                android:textSize="18dp"
-                android:textStyle="bold"
                 android:layout_below="@+id/imageDetail"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"/>
+                android:layout_marginRight="20dp"
+                android:gravity="center"
+                android:text="Nama"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvDeskripsiDetail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="diskripsi"
-                android:textStyle="bold"
-                android:layout_marginLeft="20dp"
                 android:layout_below="@+id/tvNamaDetail"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp" />
+                android:layout_marginRight="20dp"
+                android:text="diskripsi"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/btnButtonSimpan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Simpan"
                 android:layout_below="@+id/tvDeskripsiDetail"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
-                />
+                android:background="@drawable/rounded_corner"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Simpan" />
 
 
         </RelativeLayout>

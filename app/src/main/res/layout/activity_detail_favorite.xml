@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/transparant"
     tools:context=".DetailFavoriteActivity">
 
     <ScrollView
@@ -17,41 +18,48 @@
 
             <ImageView
                 android:id="@+id/imageDetailFavorite"
-                android:layout_width="450dp"
-                android:layout_height="450dp" />
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
 
             <TextView
                 android:id="@+id/tvNamaDetailFavorite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nama"
-                android:textSize="18dp"
-                android:textStyle="bold"
+                android:gravity="center"
                 android:layout_below="@+id/imageDetailFavorite"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"/>
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Nama"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvDeskripsiDetailFavorite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="diskripsi"
-                android:textStyle="bold"
-                android:layout_marginLeft="20dp"
                 android:layout_below="@+id/tvNamaDetailFavorite"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp" />
+                android:layout_marginRight="20dp"
+                android:text="diskripsi"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_semibold"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/btnButtonHapusFavorite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hapus"
                 android:layout_below="@+id/tvDeskripsiDetailFavorite"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
-                />
+                android:background="@drawable/rounded_corner"
+                android:text="Hapus"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/white" />
 
 
         </RelativeLayout>

@@ -38,6 +38,7 @@ public class DetailFavoriteActivity extends AppCompatActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_favorite);
 
+
         imageView = findViewById(R.id.imageDetailFavorite);
         tvName = findViewById(R.id.tvNamaDetailFavorite);
         tvDeskripsi = findViewById(R.id.tvDeskripsiDetailFavorite);

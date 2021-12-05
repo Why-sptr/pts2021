@@ -1,5 +1,6 @@
 package com.example.ptswahyu33;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -16,6 +18,7 @@ import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.ptswahyu33.SportAdapter;
 import com.example.ptswahyu33.ModelSports;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,16 +28,43 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+
     private RecyclerView recyclerView;
     private SportAdapter sportAdapter;
     private ArrayList<ModelSports> sportsArrayList;
 
     private Button buttonFavorite;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.nav_home);
+
+        bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
+            @Override
+            public void onNavigationItemReselected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.nav_home:
+
+
+
+                    case R.id.nav_favorite:
+                        startActivity(new Intent(getApplicationContext(),FavoriteActivity.class));
+                        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                        finish();
+                        overridePendingTransition(0,0);
+                        return;
+
+                }
+            }
+        });
 
         recyclerView = findViewById(R.id.recyclerview);
         buttonFavorite = findViewById(R.id.btnFavorite);
@@ -49,6 +79,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
+
 
     public void getData(){
         AndroidNetworking.get("https://www.thesportsdb.com/api/v1/json/2/all_sports.php")
